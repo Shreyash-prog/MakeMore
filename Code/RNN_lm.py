@@ -17,7 +17,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 torch.manual_seed(42)
 
-# Load the Tiny Shakespeare dataset
+# Load the dataset
 with open("shakespeare_corpus.txt", "r", encoding="utf-8") as f:
     text = f.read()
 

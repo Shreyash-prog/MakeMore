@@ -19,7 +19,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 torch.manual_seed(42)
 
 # Load the Tiny Shakespeare dataset
-with open("input.txt", "r", encoding="utf-8") as f:
+with open("shakespeare_corpus.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
 # Create a mapping from characters to integers

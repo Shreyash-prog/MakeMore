@@ -11,9 +11,7 @@ epochs = 5
 learning_rate = 3e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 eval_iters = 200
-output_dir = './model_checkpoints'
 
-os.makedirs(output_dir, exist_ok=True)
 torch.manual_seed(1337)
 
 # Load dataset

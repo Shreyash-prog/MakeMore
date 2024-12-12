@@ -216,9 +216,9 @@ plt.savefig(output_path_pe, dpi=300)
 plt.show()
 
 # Generate text
-context = torch.zeros((1, 1), dtype=torch.long).to(DEVICE)
-print(decode(generate(model, context, max_new_tokens=2000)[0].tolist()))
-generated_text = decode(generate(model, context, max_new_tokens=2000)[0].tolist())
+context = torch.tensor([[stoi['H']]], dtype=torch.long).to(device)  # Starting context with character 'H'
+generated_tokens = model.generate(context, max_new_tokens=5000)  # Generate 200 new tokens
+generated_text = decode(generated_tokens[0].tolist())  # Convert indices to text
 
 # Save generated text to file
 output_path = "RNN_generated_text.txt"
@@ -226,3 +226,7 @@ with open(output_path, "w") as f:
     f.write(generated_text)
 
 print(f"Generated text saved to {output_path}")
+
+# Print the generated text
+print("Generated Text:")
+print(generated_text)

@@ -17,7 +17,7 @@ os.makedirs(output_dir, exist_ok=True)
 torch.manual_seed(1337)
 
 # Load dataset
-with open('input.txt', 'r', encoding='utf-8') as f:
+with open('shakespeare_corpus.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
 chars = sorted(list(set(text)))
